@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calc BMI</title>
+    <link rel="stylesheet" href="calc.css" />
+  </head>
+
+  <body>
+    <h3><b>B</b>ody <b>B</b>ass <b>I</b>ndex Calculator</h3>
+
+    <form class="form" id="form" onsubmit="validateForm()">
+      <div class="row-one">
+        <input
+          type="number"
+          class="text-input"
+          id="age"
+          autocomplete="off"
+          min="0"
+          required
+        />
+        <p class="text">Age</p>
+        <label class="container">
+          <input type="radio" name="radio" id="f" />
+          <p class="text">Female</p>
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">
+          <input type="radio" name="radio" id="m" />
+          <p class="text">Male</p>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div class="row-two">
+        <input
+          type="number"
+          id="height"
+          class="text-input"
+          autocomplete="off"
+          min="0"
+          required
+        />
+        <p class="text">Height (cm)</p>
+        <input
+          type="number"
+          id="weight"
+          class="text-input"
+          autocomplete="off"
+          min="0"
+          required
+        />
+        <p class="text">Weight (kg)</p>
+      </div>
+      <button type="button" id="submit" class="calculate">Submit</button>
+    </form>
+
+    <h3 class="result"></h3>
+    <p class="result-statement"></p>
+  </body>
+
+  <footer>
+    <p>Copyright: <span id="current-year"></span></p>
+  </footer>
+
+  <script>
+    var ageInput = document.getElementById("age");
+    var heightInput = document.getElementById("height");
+    var weightInput = document.getElementById("weight");
+    var male = document.getElementById("m");
+    var female = document.getElementById("f");
+    var form = document.getElementById("form");
+    var statement = document.querySelector(".result-statement");
+    var result = document.querySelector(".result");
+    var calculateButton = document.querySelector(".calculate");
+
+    var BMI;
+
+    function validateForm() {
+      if (
+        ageInput.value == "" ||
+        heightInput.value == "" ||
+        weightInput.value == "" ||
+        (male.checked == false && female.checked == false)
+      ) {
+        alert("All fields are required!");
+        document
+          .getElementById("submit")
+          .removeEventListener("click", countBmi);
+      } else {
+        countBmi();
+      }
+    }
+    document.getElementById("submit").addEventListener("click", validateForm);
+
+    function countBmi() {
+      var p = [ageInput.value, heightInput.value, weightInput.value];
+      if (male.checked) {
+        p.push("male");
+      } else if (female.checked) {
+        p.push("female");
+      }
+      // console.log(p);
+    }
+
+    calculateButton.addEventListener("click", () => {
+      height = heightInput.value;
+      weight = weightInput.value;
+
+      height = height / 100;
+      BMI = weight / (height * height);
+      result.innerText = "BMI : " + BMI;
+      console.log(BMI);
+
+      if (BMI > 0) {
+        if (BMI <= 16) {
+          statement.innerText = "you are severely underweight";
+        } else if (BMI <= 18.5) {
+          statement.innerText = "you are underweight";
+        } else if (BMI <= 25) {
+          statement.innerText = "you are healthy";
+        } else if (BMI <= 30) {
+          statement.innerText = "you are overweight";
+        } else {
+          statement.innerText = "your are severely overweight";
+        }
+      } else {
+        statement.innerText = "Enter valid details";
+      }
+    });
+  </script>
+</html>

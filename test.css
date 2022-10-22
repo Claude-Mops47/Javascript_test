@@ -1,0 +1,92 @@
+#s2 {
+  margin: 10px;
+  background-color: aquamarine;
+}
+
+#s3 h1 {
+  text-align: center;
+  color: #884386;
+  font-size: 20px;
+}
+#s4 .parent {
+  text-transform: uppercase;
+  border: 10px solid #383d52;
+  display: grid;
+  place-items: center;
+  padding: 50px;
+  width: min(100% - 15px, 840px);
+  margin-inline: auto;
+}
+#s4 .child {
+  text-align: center;
+  border: 10px solid;
+  width: 250px;
+  height: 200px;
+  border-image: repeating-linear-gradient(
+      30deg,
+      #ffb87a,
+      #ff85ad,
+      #6b66ff 150px
+    )
+    1;
+}
+#s4 .child:hover {
+  border-image: repeating-linear-gradient(
+      -30deg,
+      #ffb87a,
+      #ff85ad,
+      #6b66ff 75px
+    )
+    1;
+}
+
+.art {
+  display: grid;
+  grid-auto-flow: column;
+  scroll-behavior: auto;
+  gap: 1.2rem;
+  overflow-y: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.card {
+  flex-direction: row;
+}
+
+h2 {
+  text-align: center;
+  color: rgba(24, 31, 36, 0.75);
+  font-family: "Roboto" sans-serif;
+  font-size: 25px;
+  flex-direction: 55px;
+}
+
+#s1 h1 {
+  position: relative;
+  font-size: 5rem;
+  font-family: "Gill Sans", "Gill Sans MT", Cambria;
+  -webkit-text-stroke: 0.3vw #383d52;
+  text-transform: uppercase;
+}
+#s1 h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8%;
+  height: 100%;
+  color: aquamarine;
+  -webkit-text-stroke: 0vw #383d52;
+  border-right: 2px solid aquamarine;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+  -webkit-animation: animation 6s linear infinite;
+}
+@keyframes animation {
+  0% {
+    width: 0;
+  }
+  70% {
+    width: 100%;
+  }
+}

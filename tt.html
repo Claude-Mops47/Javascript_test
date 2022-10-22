@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlapping</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    body {
+      background-color: #1f1c32;
+    }
+    @keyframes rain {
+      0% {
+        transform: translateY(-200px);
+      }
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+    div {
+      transform: translate(-200px);
+      position: absolute;
+      height: 150px;
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      background-image: linear-gradient(0deg, white);
+      animation: rain 5s linear infinite;
+    }
+    .tex {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+      color: white;
+    }
+    .tex span {
+      font-size: 22vw;
+      font-weight: 800;
+      text-shadow: -0.08em 0.03em 0.12em rgba(0, 0, 0, 0.9);
+    }
+    .tex span:not(:first-child) {
+      margin-left: -0.23em;
+    }
+    .clock {
+      position: absolute;
+      top: 50px;
+      left: 180px;
+      transform: translateX(-50%) translateY(-50%);
+      color: white;
+      font-size: 60px;
+      font-family: Montserrat;
+      letter-spacing: 7px;
+    }
+  </style>
+
+  <body>
+    <section>
+      <!-- <div class="tex">
+        <span>M</span>
+        <span>O</span>
+        <span>P</span>
+        <span>E</span>
+        <span>N</span>
+        <span>O</span>
+      </div> -->
+    </section>
+  </body>
+
+  <script>
+    function rain() {
+      let body_s = document.querySelector("body");
+
+      i = 0;
+      while (i < 200) {
+        let drops = document.createElement("div");
+        let size = Math.random();
+        let xpo_s = Math.random() * window.innerWidth;
+        let delay = Math.random() * -15;
+        let duration = Math.random() * 10;
+        let r = 0 * Math.random();
+        let g = 255 * Math.random();
+        let b = 255 * Math.random();
+        drops.style.width = 0.2 + size + "px";
+        drops.style.left = xpo_s + "px";
+        drops.style.animationDelay = delay + "s";
+        drops.style.animationDuration = 0.4 + duration + "s";
+        drops.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+        body_s.appendChild(drops);
+        i++;
+        console.log(r, g, b);
+      }
+    }
+    rain();
+  </script>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto";
+    }
+
+    body {
+      width: 100%;
+      background-color: #878992;
+    }
+    h2 {
+      color: #ffffff;
+      font-size: 144px;
+      font-weight: 300;
+    }
+
+    #demo,
+    h1 {
+      position: relative;
+      font-size: 5rem;
+      font-family: "Gill Sans", "Gill Sans MT", Cambria;
+      -webkit-text-stroke: 0.3vw #383d52;
+      text-transform: uppercase;
+    }
+    section {
+      align-items: center;
+      padding: 40px 80px;
+    }
+  </style>
+
+  <body>
+    <section id="s1">
+      <h3>Times</h3>
+      <h2></h2>
+    </section>
+
+    <section id="s2">
+      <h3>Compte a rébours</h3>
+      <h2 id="demo"></h2>
+    </section>
+
+    <section id="s3">
+      <h3>Times 2</h3>
+      <div class="clock" id="DisplayClock" onload="showTime()"></div>
+    </section>
+  </body>
+
+  <script>
+    // section 1
+    const currentTime = () => {
+      const el = document.querySelector("h2");
+
+      let date = new Date();
+      let hh = date.getHours();
+      let mm = date.getMinutes();
+      let ss = date.getSeconds();
+
+      let time = `${hh}:${mm}:${ss}`;
+      el.innerText = time;
+    };
+    currentTime();
+    setInterval(currentTime, 1000);
+
+    // section 2
+    let demo = document.getElementById("demo");
+    let deadline = new Date("Nov, 2022 12:00:30").getTime();
+
+    let x = setInterval(function () {
+      let now = new Date().getTime();
+      let time = deadline - now;
+      let days = Math.floor(time / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((time % (1000 * 60)) / 1000);
+
+      demo.innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      // console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+
+      if (time < 0) {
+        clearInterval(x);
+        demo.innerHTML = "Expired";
+      }
+    }, 1000);
+
+    // section 3
+    function showTime() {
+      var date = new Date();
+      var h = date.getHours();
+      var m = date.getMinutes();
+      var s = date.getSeconds();
+      var session = "AM";
+
+      if (h == 0) {
+        h = 12;
+      }
+      if (h > 12) {
+        h = h - 12;
+        session = "PM";
+      }
+      h = h < 10 ? "0" + h : h;
+      m = m < 10 ? "0" + m : m;
+      s = s < 10 ? "0" + s : s;
+
+      var time = h + ":" + m + ":" + s + " " + session;
+      document.getElementById("DisplayClock").innerText = time;
+      document.getElementById("DisplayClock").textContent = time;
+      setTimeout(showTime, 1000);
+    }
+    showTime();
+  </script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coding_dev_</title>
+  </head>
+  <style>
+    .open {
+      margin: 20px 30px 0;
+      padding: top;
+    }
+  </style>
+
+  <body>
+    <main>
+      <h3 translate="no">@programador.cs</h3>
+    </main>
+
+    <div class="open">
+      <h1>Salut !</h1>
+    </div>
+
+    <label for="imageFile">Upload a photo of yourself:</label>
+    <input type="file" id="imageFile" capture="user" accept="image/*" />
+
+    <button type="button" onclick="window.location.reload();">
+      Refresh for update values
+    </button>
+
+    <div class="container">
+      <form>
+        <p>
+          <label for="phone_number">Phone:</label>
+
+          <input
+            type="text"
+            name="phone_number"
+            pattern="[7-9]{1}[0-9]{9}"
+            title="10 Digits Phone Number 7-9 at the beginning"
+            required
+          />
+        </p>
+        <p>
+          <input type="submit" type="submit" class="button" id="button" />
+        </p>
+      </form>
+    </div>
+  </body>
+  <script>
+    let activeAlert = false;
+    const title = "coding_dev_";
+    const msg = "(6) New Messages";
+    const changeTitle = setInterval(() => {
+      document.title = activeAlert ? title : msg;
+
+      activeAlert = !activeAlert;
+    }, 2000);
+  </script>
+</html>
