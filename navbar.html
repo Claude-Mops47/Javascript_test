@@ -111,4 +111,32 @@
       background: #36b7ee;
     }
   </style>
+
+  <script>
+    // bindMethod
+
+    const p1 = {
+      fName: "Mops",
+      lName: "Claude",
+    };
+    const p2 = {
+      fName: "Lom",
+      lName: "William",
+    };
+    const p3 = {
+      fName: "Lil",
+      lName: "Will",
+    };
+
+    function fullName() {
+      return "Hello" + " " + this.fName + " " + this.lName;
+    }
+
+    list_users = [p1, p2, p3];
+
+    for (let user of list_users) {
+      use = fullName.bind(user);
+      console.log(use());
+    }
+  </script>
 </html>
