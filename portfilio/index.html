@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Porfilio</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <button type="button" class="burger" onclick="toggleSidebar()">
+      <img src="avatar.png" alt="avatar" class="burger-icon" />
+      <span class="burger-icon"></span>
+    </button>
+    <div class="overlay"></div>
+    <aside class="sidebar">
+      <img src="avatar.png" alt="avatar" class="sidebar-avatar" />
+      <div class="sidebar-username">frontendMops</div>
+      <div class="sidebar-role">Frontend Developer</div>
+      <!-- <nav class="sidebar-menu">
+        <button type="button">
+          <img src="./assets/icon-home.svg" alt="" />
+          <span>Home</span>
+        </button>
+      </nav> -->
+    </aside>
+
+    <footer>
+      <p>Copyright: <span style="color: white" id="current-date"></span></p>
+    </footer>
+  </body>
+
+  <script>
+    const toggleSidebar = () => {
+      document.body.classList.toggle("open");
+    };
+
+    const year = document.querySelector("#current-date");
+
+    year.innerHTML = new Date().getFullYear();
+  </script>
+</html>

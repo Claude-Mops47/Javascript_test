@@ -1,0 +1,123 @@
+.overlay,
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+.overlay {
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  transition: 0.4s;
+}
+.sidebar {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 20px;
+  background: #000000;
+  filter: blur(10px);
+  transition-property: filter, visibility, opacity;
+  transition-duration: 0.6s;
+}
+.burger {
+  position: fixed;
+  z-index: 3;
+  top: 20px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.burger-avatar,
+.burger-icon {
+  width: 30px;
+  height: 30px;
+}
+.burger-avatar {
+  transition: 0.4s;
+}
+.burger-icon {
+  display: block;
+  background-image: url("./assets/icon-burger.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media (width >= 500px) {
+  .burger {
+    display: none;
+  }
+}
+@media (width >= 400px) {
+  .sidebar {
+    translate: 100% 0;
+    width: 180%;
+    transition-property: translate;
+    transition-duration: 0.4s;
+  }
+}
+@media (width >= 500px) {
+  .sidebar {
+    translate: 0 0;
+    border-left: 1pc solid rgba(255, 255, 255, 0.16);
+    opacity: 1;
+    visibility: visible;
+    filter: blur(0);
+  }
+}
+.sidebar-avatar {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+.sidebar-username {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.57);
+}
+.sidebar-menu {
+  display: grid;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+.sidebar-menu > button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  line-height: 1;
+  padding: 10px 20px;
+}
+.sidebar-menu > img {
+  width: 17px;
+  height: 17px;
+}
+.sidebar-menu > button > span {
+  font-size: 11px;
+  translate: 0 1px;
+}
+body.open .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+body.open .burger-avatar {
+  translate: 40px 0;
+  opacity: 0;
+  visibility: hidden;
+}
+body.open .sidebar {
+  translate: 0 0;
+  opacity: 1;
+  visibility: visible;
+  filter: blur(0);
+}

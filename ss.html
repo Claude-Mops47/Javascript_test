@@ -47,6 +47,10 @@
         </p>
       </form>
     </div>
+
+    <footer>
+      <p>Copyright: <span id="current-date"></span></p>
+    </footer>
   </body>
   <script>
     let activeAlert = false;
@@ -57,5 +61,9 @@
 
       activeAlert = !activeAlert;
     }, 2000);
+
+    const year = document.querySelector("#current-date");
+
+    year.innerHTML = new Date().getFullYear();
   </script>
 </html>
