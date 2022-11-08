@@ -103,3 +103,28 @@ function generatePassword() {
 
 let pass = generatePassword();
 console.log(pass);
+
+let num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+console.log("even numbers are");
+for (var i = 1; i < 10; i += 2) {
+  console.log(i);
+}
+
+console.log("odd numbers are");
+for (var i = 2; i < 10; i += 2) {
+  console.log(i);
+}
+
+let a = "hey";
+let b = { name: "john" };
+person = `${a} ${b.name}`;
+
+console.log(person);
+
+function func(a, b) {
+  a = "hello";
+  b.name = "me";
+}
+
+func();
