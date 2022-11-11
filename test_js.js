@@ -116,15 +116,42 @@ for (var i = 2; i < 10; i += 2) {
   console.log(i);
 }
 
-let a = "hey";
-let b = { name: "john" };
-person = `${a} ${b.name}`;
+// let a = "hey";
+// let b = { name: "john" };
+// person = `${a} ${b.name}`;
 
-console.log(person);
+// console.log(person);
 
-function func(a, b) {
-  a = "hello";
-  b.name = "me";
-}
+// function func(a, b) {
+//   a = "hello";
+//   b.name = "me";
+// }
 
-func();
+// func();
+
+//* Assigning array items to variables
+const [a, b, c] = [123, "second", true];
+console.log(a, b, c);
+
+//* Skipping items
+const [, d] = [123, "second", true];
+console.log(d);
+
+//* Assigning the first values, string the rest together
+const [e, f, ...rest] = [123, "second", true, false, 42];
+console.log(rest, e, f);
+
+//* Swapping variables
+let x = true;
+let y = false;
+[x, y] = [y, x];
+console.log(x, y);
+
+//* charAt()
+var txt = "Hello world";
+console.log(txt.charAt(0));
+
+//* concat()
+var str1 = "Hello ";
+var str2 = "codingtute!";
+console.log(str1.concat(str2));
