@@ -129,6 +129,8 @@ for (var i = 2; i < 10; i += 2) {
 
 // func();
 
+//! JavaScript Arrays Destructuring
+
 //* Assigning array items to variables
 const [a, b, c] = [123, "second", true];
 console.log(a, b, c);
@@ -147,6 +149,8 @@ let y = false;
 [x, y] = [y, x];
 console.log(x, y);
 
+//! JavaScript String Methods Cheat Sheet
+
 //* charAt()
 var txt = "Hello world";
 console.log(txt.charAt(0));
@@ -155,3 +159,70 @@ console.log(txt.charAt(0));
 var str1 = "Hello ";
 var str2 = "codingtute!";
 console.log(str1.concat(str2));
+
+//* indexOf()
+var txt = "Lets find where 'pen' occurs!";
+console.log(txt.indexOf("pen"));
+
+//* lastIndexOf()
+var str = "A dev knows a dev";
+var pos = str.lastIndexOf("dev");
+console.log(pos);
+
+//* replace()
+var str = "Hello Dev!";
+console.log(str.replace("Dev", "world"));
+
+//* search()
+var str = "Hello dev!";
+console.log(str.search("dev"));
+
+//* slice(start, end)
+var str = "Developers world!";
+console.log(str.slice(0, 10));
+
+//* substr(start, length)
+var s = "JavaScript";
+console.log(s.substr(4, 6));
+
+//* substring(start, end)
+var str = "Hello dev!";
+console.log(str.substring(1, 4));
+
+//* toUpperCase()
+var sentence = "CodingTute";
+console.log(sentence.toUpperCase());
+
+//* valueOf()
+// const s = new String("test");
+// typeof s;
+// s.valueOf();
+// typeof s.valueOf();
+
+//* trim()
+var str = " Trim Both Side  ";
+console.log(str.trim());
+
+//* toString()
+var number = 15;
+console.log(number.toString());
+
+//* includes()
+var str = "My name is codingtute.";
+console.log(str.includes("name"));
+
+//* charCodeAt()
+var str = "TEST";
+console.log(str.charCodeAt(0));
+
+//* match()
+var str = "lopersum lopersum  lopersum lopersum";
+console.log(str.match(/sum/g));
+
+//* split()
+var str = "1,2,3,4,5";
+console.log(str.split(","));
+
+//* toLowerCase()
+var sentence = "CodingTute";
+console.log(sentence.toLowerCase());
