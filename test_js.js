@@ -250,3 +250,9 @@ function multi(...numbers) {
   return total;
 }
 console.log(multi(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+//! Array.splice
+
+var numbers = [1, 2, 3, 4, 5];
+// numbers.splice(2, 1);
+console.log(numbers.splice(2, 1));
