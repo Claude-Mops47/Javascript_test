@@ -9,8 +9,11 @@
   <body>
     <div class="dropdown" id="dropdown">
       <button id="button" onclick="toggleDropdown()">
-        <span> account_circle </span> Mops Winds
-        <span id="chevron" class="chevron"> expand_more</span>
+        <span>
+          <i class="fas fa-user-circle"></i>
+        </span>
+        Mops Winds
+        <span id="chevron" class="chevron"> ^ </span>
       </button>
       <div class="menu" id="menu"><button>build</button> Tools</div>
     </div>
@@ -85,15 +88,15 @@
 
   <script type="text/javascript">
     const button = document.getElementById("button");
-    // const buttonRect = document.getBoundingClientRect();
+    const buttonRect = button.getBoundingClientRect();
     const chevron = document.getElementById("chevron");
-    // const chevronRect = document.getBoundingClientRect();
-    // const menuRight = buttonRect.right - chevronRect.right;
-    // const menuTop = chevronRect.top - buttonRect.top;
+    const chevronRect = chevron.getBoundingClientRect();
+    const menuRight = buttonRect.right - chevronRect.right;
+    const menuTop = chevronRect.top - buttonRect.top;
     const menu = document.getElementById("menu");
 
-    // menu.style.top = `${menuTop}px`;
-    // menu.style.right = `${menuRight}px`;
+    menu.style.top = `${menuTop}px`;
+    menu.style.right = `${menuRight}px`;
 
     const toggleDropdown = () => {
       const dropdown = document.getElementById("dropdown");
@@ -108,7 +111,5 @@
 
       dropdown.classList.toggle("open");
     };
-
-    console.log(menu.getBoundingClientRect());
   </script>
 </html>
