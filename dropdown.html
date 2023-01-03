@@ -7,10 +7,29 @@
     <title>Dropdown 4</title>
   </head>
 
-  <!-- Dropdown 4  -->
   <body>
+    <!-- Header -->
+    <header id="banner" class="banner">
+      <h1 id="h1">Parallax</h1>
+      <button id="_button">Get Started</button>
+    </header>
+
+    <section class="content">
+      <!-- page content -->
+      <h1>Heading</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Dignissimos fugiat soluta sed sunt harum repudiandae rerum temporibus commodi et est, 
+        officiis eum doloribus. Neque, dignissimos in officia tempore nesciunt molestiae!</p>
+
+       <!-- page content -->
+       <h1>Heading 2</h1>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Dignissimos fugiat soluta sed sunt harum repudiandae rerum temporibus commodi et est, 
+        officiis eum doloribus. Neque, dignissimos in officia tempore nesciunt molestiae!</p>
+ 
+      <!-- Dropdown 4  -->
     <div class="dropdown" id="dropdown">
-      <button id="button" onclick="toggleDropdown()">
+      <button id="_button" onclick="toggleDropdown()">
         <span>
           <i class="fas fa-user-circle"></i>
         </span>
@@ -25,9 +44,12 @@
       </div>
     </div>
   </body>
+    </section>
+
+    
 
   <style>
-    .dropdown {
+    /* .dropdown {
       position: absolute;
     }
     .dropdown button {
@@ -89,33 +111,90 @@
     }
     .dropdown.open .chevron {
       rotate: -180deg;
+    } */
+
+    /* header */
+    .banner,
+    h1,
+    button {
+      transition: 0.6s;
+    }
+    .banner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 60%;
+      background: url("Fotoram.io.jpg");
+      background-position: center;
+      background-size: 180%;
+      transition: 0.5s;
+    }
+    .banner h1 {
+      color: #f9f9f9;
+    }
+    .banner button {
+      padding: 12px 36px;
+      border-radius: 50px;
+      border: 0;
+      background: #221e6f;
+      color: #f9f9f9;
     }
   </style>
 
   <script type="text/javascript">
-    const button = document.getElementById("button");
-    const buttonRect = button.getBoundingClientRect();
-    const chevron = document.getElementById("chevron");
-    const chevronRect = chevron.getBoundingClientRect();
-    const menuRight = buttonRect.right - chevronRect.right;
-    const menuTop = chevronRect.top - buttonRect.top;
-    const menu = document.getElementById("menu");
+    // const button = document.getElementById("button");
+    // const buttonRect = button.getBoundingClientRect();
+    // const chevron = document.getElementById("chevron");
+    // const chevronRect = chevron.getBoundingClientRect();
+    // const menuRight = buttonRect.right - chevronRect.right;
+    // const menuTop = chevronRect.top - buttonRect.top;
+    // const menu = document.getElementById("menu");
 
-    menu.style.top = `${menuTop}px`;
-    menu.style.right = `${menuRight}px`;
+    // menu.style.top = `${menuTop}px`;
+    // menu.style.right = `${menuRight}px`;
 
-    const toggleDropdown = () => {
-      const dropdown = document.getElementById("dropdown");
+    // const toggleDropdown = () => {
+    //   const dropdown = document.getElementById("dropdown");
 
-      if (dropdown.classList.contains("open")) {
-        menu.style.top = `${menuTop}px`;
-        menu.style.right = `${menuRight}px`;
+    //   if (dropdown.classList.contains("open")) {
+    //     menu.style.top = `${menuTop}px`;
+    //     menu.style.right = `${menuRight}px`;
+    //   } else {
+    //     menu.style.top = `${button.clientHeight + 10}px`;
+    //     menu.style.right = 0;
+    //   }
+
+    //   dropdown.classList.toggle("open");
+    // };
+
+    // header
+    const h1 = document.getElementById("h1"),
+      banner = document.getElementById("banner"),
+      button = document.getElementById("button");
+
+    const onScroll = (event) => {
+      const scrollPosition = event.target.scrollingElement.scrollTop;
+
+      if (scrollPosition > 150) {
+        banner.style.backgroundSize = "150%";
+        h1.style.opacity = 0;
+        h1.style.translate = "0 -50px";
+        h1.style.scale = "0.9";
+        button.style.opacity = 0;
+        button.style.translate = "0 -40px";
+        button.style.scale = "0.8";
       } else {
-        menu.style.top = `${button.clientHeight + 10}px`;
-        menu.style.right = 0;
+        banner.style.backgroundSize = "180%";
+        h1.style.opacity = 1;
+        h1.style.translate = 0;
+        h1.style.scale = 1;
+        button.style.opacity = 1;
+        button.style.translate = 0;
+        button.style.scale = 1;
       }
-
-      dropdown.classList.toggle("open");
     };
+    document.addEventListener("scroll", onScroll);
   </script>
 </html>
