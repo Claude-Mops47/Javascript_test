@@ -109,5 +109,23 @@
       console.log(ed);
     }
     salut();
+
+    const employees = [
+      { id: 1, empName: "Mops", dept: "Support" },
+      { id: 1, empName: "MorningStar", dept: "Support" },
+      { id: 1, empName: "Claude", dept: "IT" },
+      { id: 1, empName: "Jayden", dept: "Marketing" },
+    ];
+
+    const result = employees.reduce((accumulator, currentValue) => {
+      const { dept } = currentValue;
+      if (!accumulator[dept]) {
+        accumulator[dept] = [];
+      }
+      accumulator[dept].push(currentValue);
+      return accumulator;
+    }, {});
+
+    console.log(result);
   </script>
 </html>
