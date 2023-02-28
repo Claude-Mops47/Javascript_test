@@ -8,7 +8,7 @@ try {
   console.log("can not define new property");
 }
 
-emp.name = "Emmanuel Mopeno";
+//emp.name = "Emmanuel Mopeno";
 
 console.log(Object.isSealed(emp));
 
