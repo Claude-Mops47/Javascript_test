@@ -15,3 +15,18 @@ const person = {
 };
 const personToJson = JSON.stringify(person);
 console.log(personToJson);
+
+
+function firtFunction(a,b, callback){
+
+console.log(`Sum is ${a+b}`);
+callback();
+}
+
+function secondFunction(){
+console.log('I am callback function');
+}
+
+firtFunction(3,6, secondFunction)
+
+
