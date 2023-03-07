@@ -3,6 +3,7 @@ function isEven(number) {
 }
 const myNumber = 23;
 const isMyNumberEven = isEven(myNumber);
+
 // console.log(isEven);
 console.log(isMyNumberEven);
 
@@ -16,7 +17,7 @@ const person = {
 const personToJson = JSON.stringify(person);
 console.log(personToJson);
 
-
+// function callback
 function firtFunction(a,b, callback){
 
 console.log(`Sum is ${a+b}`);
