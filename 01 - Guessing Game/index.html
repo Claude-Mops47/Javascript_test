@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guessing Game</title>
+  </head>
+  <body>
+    <div class="spinner"></div>
+
+    <!-- Row -->
+    <div class="simple-grid">
+      <!--Cell with given width. Replace 25% with whatever you want -->
+      <div class="simple-grid__cell simple-grid__cell--1/4">
+        <button onclick="guessNumber()">25%</button>
+      </div>
+
+      <!-- Cell that takes remaining width -->
+      <div class="simple-grid__cell simple-grid__cell--fill">...</div>
+    </div>
+
+    <div class="wizard">
+      <!-- Step -->
+      <div class="wizard__step">
+        <div class="wizard__dot">
+          <!-- The left connector -->
+          <div class="wizard__connector"></div>
+
+          <!-- The step number -->
+          <div class="wizard__number">...</div>
+
+          <!-- The right connector -->
+          <div class="wizard__connector"></div>
+        </div>
+
+        <!-- Title of step -->
+        ...
+      </div>
+
+      <!-- Repeat other steps -->
+      ...
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
