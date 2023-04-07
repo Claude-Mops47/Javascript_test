@@ -7,3 +7,21 @@ for (let i = 0; i < n; i++) {
     process.stdout.write(a[i]);
   }, i * 100);
 }
+
+//
+const video = document.querySelector("video");
+const constraints = {
+  audio: false,
+  video: {
+    facingMode: "user",
+  },
+};
+
+navigator.mediaDevices
+  .getUserMedia(constraints)
+  .then((stream) => {
+    video.srcObject = stream;
+  })
+  .catch((error) => {
+    console.error("Error accessing camera: ", error);
+  });
