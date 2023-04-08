@@ -6,6 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cam</title>
   </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: none;
+      list-style: none;
+      list-style-type: none;
+      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    html {
+      font-size: 100%;
+      box-shadow: inherit;
+      scroll-behavior: smooth;
+      height: -webkit-fill-available;
+    }
+    body {
+      font-family: "Inter", sans-serif;
+      font-size: var(--text-md);
+      font-weight: normal;
+      line-height: 1.5;
+      color: var(--black-500);
+      background-color: var(--white-100);
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      background-color: var(--white-100);
+      box-shadow: var(--shadow-medium);
+    }
+  </style>
+  <header class="header" id="header">
+    <nav class="navbar container">
+      <a href="#" class="brand">Nike</a>
+      <div class="burger" id="burger">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </div>
+      <div class="menu" id="menu">
+        <ul class="menu-inner">
+          <li class="menu-item"><a href="#" class="menu-link">Men</a></li>
+          <li class="menu-item"><a href="#" class="menu-link">Women</a></li>
+          <li class="menu-item"><a href="#" class="menu-link">Kids</a></li>
+          <li class="menu-item"><a href="#" class="menu-link">Custom</a></li>
+          <li class="menu-item"><a href="#" class="menu-link">Sale</a></li>
+        </ul>
+      </div>
+      <button class="menu-block">
+        <i class="fa-solid fa-bag-shopping"></i>
+      </button>
+    </nav>
+  </header>
+
   <body>
     <h1>Camera</h1>
     <video autoplay></video>
