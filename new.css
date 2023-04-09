@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400,500,600,700&display=swap");
+
+:root {
+  --color-white-100: hsl(206, 5%, 100%);
+  --color-white-200: hsl(206, 5%, 90%);
+  --color-black-200: hsl(213, 23%, 8%);
+  --color-black-300: hsl(214, 21%, 6%);
+  --color-black-500: hsl(216, 22%, 4%);
+  --color-bleu-600: hsl(221, 83%, 53%);
+  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.6);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: none;
+  list-style: none;
+  list-style-type: none;
+  text-decoration: none;
+
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility; */
+}
+html {
+  font-size: 100%;
+  box-shadow: inherit;
+  scroll-behavior: smooth;
+  height: -webkit-fill-available;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-white-100);
+  background-color: var(--color-black-500);
+}
+main {
+  overflow: hidden;
+}
+a,
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  user-select: none;
+  box-shadow: none;
+  background: none;
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.section {
+  margin: 0 auto;
+  padding: 8rem 0 1rem;
+}
+.container {
+  min-width: 75rem;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.heading-xl {
+  font-family: inherit;
+  font-size: clamp(2.648rem, 6vw, 4.241rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: all 0.35s ease;
+  /* 
+  background-color: var(--white-100);
+  box-shadow: var(--shadow-medium); */
+}
+.header .on-scroll {
+  background-color: var(--color-black-300);
+  box-shadow: var(--shadow-medium);
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 1.25rem;
+  width: 100%;
+  height: 4.25rem;
+  margin: 0 auto;
+}
+.brand {
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -1px;
+  color: var(--color-white-100);
+  text-transform: uppercase;
+}
