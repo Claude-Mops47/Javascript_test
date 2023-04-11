@@ -44,6 +44,8 @@ document.querySelectorAll(".menu-link").forEach((link) => {
   });
 });
 
+// confirm
+
 window.addEventListener("scroll", () => {
   if (this.scrollY >= 85) {
     headerMenu.classList.add("on-scroll");
