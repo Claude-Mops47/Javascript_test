@@ -46,6 +46,8 @@ document.querySelectorAll(".menu-link").forEach((link) => {
 
 // confirm
 
+// confirmation de la journée
+
 window.addEventListener("scroll", () => {
   if (this.scrollY >= 85) {
     headerMenu.classList.add("on-scroll");
