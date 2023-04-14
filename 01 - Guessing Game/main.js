@@ -1,4 +1,4 @@
-// je suis le chatiment divin ! 
+// je suis le chatiment divin !
 
 function guessNumber() {
   let playerGuess;
