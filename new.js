@@ -64,32 +64,62 @@ window.addEventListener("resize", () => {
   }
 });
 
-let pushShift = () => {
-  shift.push(
-    Math.random() * Math.PI,
-    Math.random() * Math.PI * 2,
-    (Math.random() * 0.9 + 0.1) * Math.PI * 0.1,
-    Math.random() * 0.9 + 0.1
-  );
-};
-let pts = new Array(50000).fill().map((p) => {
-  sizes.push(Math.random() * 1.5 + 0.5);
-  pushShift();
-  return new THREE.Vector3()
-    .randomDirection()
-    .multiplyScalar(Math.random() * 0.5 + 9.5);
-});
+// let pushShift = () => {
+//   shift.push(
+//     Math.random() * Math.PI,
+//     Math.random() * Math.PI * 2,
+//     (Math.random() * 0.9 + 0.1) * Math.PI * 0.1,
+//     Math.random() * 0.9 + 0.1
+//   );
+// };
+// let pts = new Array(50000).fill().map((p) => {
+//   sizes.push(Math.random() * 1.5 + 0.5);
+//   pushShift();
+//   return new THREE.Vector3()
+//     .randomDirection()
+//     .multiplyScalar(Math.random() * 0.5 + 9.5);
+// });
 
-for (let i = 0; i < 100000; i++) {
-  let r = 10,
-    R = 40;
-  let rand = Math.pow(Math.random(), 1.5);
-  let radius = Math.sqrt(R * R * rand + (1 - rand) * r * r);
-  pts.push(
-    new THREE.Vector3().setFromCylindricalCoords(
-      radius,
-      Math.random() * 2 * Math.PI,
-      (Math.random() - 0.5) * 2
-    )
-  );
-}
+// for (let i = 0; i < 100000; i++) {
+//   let r = 10,
+//     R = 40;
+//   let rand = Math.pow(Math.random(), 1.5);
+//   let radius = Math.sqrt(R * R * rand + (1 - rand) * r * r);
+//   pts.push(
+//     new THREE.Vector3().setFromCylindricalCoords(
+//       radius,
+//       Math.random() * 2 * Math.PI,
+//       (Math.random() - 0.5) * 2
+//     )
+//   );
+// }
+
+let token = localStorage.getItem("token");
+// expert
+const isLogged = (token) => {
+  return token != null;
+};
+// senior
+const isLogged1 = (token) => {
+  return token != null ? true : false;
+};
+// legend
+const isLogged2 = (token) => {
+  return !!token;
+};
+// junior
+const isLogged3 = (token) => {
+  if (token !== null) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.table([
+  token,
+  isLogged(token),
+  isLogged1(token),
+  isLogged2(token),
+  isLogged3(token),
+]);
